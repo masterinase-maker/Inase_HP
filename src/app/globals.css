@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-red: #DC0A0A;
+    --color-red-light: #FF2020;
+    --color-red-dark: #9B0000;
+    --color-black: #0A0A0A;
+    --color-black-light: #1A1A1A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #F5F5F5;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .text-shadow-red {
+    text-shadow: 0 0 20px rgba(220, 10, 10, 0.8), 0 0 40px rgba(220, 10, 10, 0.4);
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A0A0A 50%, #0A0A0A 100%);
+  }
+
+  .border-gradient-red {
+    border-image: linear-gradient(90deg, #DC0A0A, transparent) 1;
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+}
+
+/* Pause marquee on hover */
+.marquee-container:hover .animate-marquee,
+.marquee-container:hover .animate-marquee-2 {
+  animation-play-state: paused;
+}

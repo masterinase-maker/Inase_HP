@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INASE Charity Fight 出場選手を募集しています。格闘技歴・実績不問。">
+  <title>選手募集 | INASE Charity Fight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a>
+      <nav class="nav-desktop">
+        <a href="index.html">TOPへ</a><a href="about.html">INASEとは</a>
+        <div class="nav-item"><a href="charity.html">チャリティ活動</a><div class="nav-dropdown"><a href="charity-achievements.html">支援実績</a><a href="charity-reports.html">寄付報告</a><a href="charity-activities.html">活動レポート</a></div></div>
+        <div class="nav-item"><a href="events.html">大会情報</a><div class="nav-dropdown"><a href="events-next.html">次回大会</a><a href="events-matchups.html">対戦カード</a><a href="events-past.html">過去大会</a></div></div>
+        <a href="recruitment.html">選手募集</a><a href="sponsorship.html">協賛募集</a><a href="sponsors.html">協賛一覧</a><a href="contact.html">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="mobileNav">
+    <a href="index.html" onclick="closeMenu()">TOPへ</a><a href="about.html" onclick="closeMenu()">INASEとは</a>
+    <a href="charity.html" onclick="closeMenu()">チャリティ活動</a>
+    <a href="charity-achievements.html" class="nav-mobile-sub" onclick="closeMenu()">└ 支援実績</a>
+    <a href="charity-reports.html" class="nav-mobile-sub" onclick="closeMenu()">└ 寄付報告</a>
+    <a href="charity-activities.html" class="nav-mobile-sub" onclick="closeMenu()">└ 活動レポート</a>
+    <a href="events.html" onclick="closeMenu()">大会情報</a>
+    <a href="events-next.html" class="nav-mobile-sub" onclick="closeMenu()">└ 次回大会</a>
+    <a href="events-matchups.html" class="nav-mobile-sub" onclick="closeMenu()">└ 対戦カード</a>
+    <a href="events-past.html" class="nav-mobile-sub" onclick="closeMenu()">└ 過去大会</a>
+    <a href="recruitment.html" onclick="closeMenu()">選手募集</a><a href="sponsorship.html" onclick="closeMenu()">協賛募集</a>
+    <a href="sponsors.html" onclick="closeMenu()">協賛一覧</a><a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  </nav>
+
+
+  <!-- ページヒーロー -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <span class="page-hero-en">Fighter Recruitment</span>
+      <h1>選手募集</h1>
+      <!-- ▼ キャッチコピーは差し替え可能 -->
+      <p class="page-hero-desc" style="font-size:18px;color:var(--gray-light);">あなたの戦いが、子供達の未来を変える。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       キャッチ & 概要
+       ============================================================ -->
+  <section class="section-black" style="padding-bottom:0;">
+    <div class="container" style="max-width:720px;text-align:center;padding-bottom:48px;">
+      <p style="color:var(--gray-light);font-size:15px;line-height:1.85;margin-bottom:12px;" class="fade-in-section">
+        INASE Charity Fight では、出場選手を随時募集しています。
+      </p>
+      <p style="color:var(--gray);font-size:14px;line-height:1.85;" class="fade-in-section">
+        格闘技歴・実績を問わず、チャリティの趣旨に賛同していただける方であればどなたでもご参加いただけます。<br>
+        あなたの戦う姿が、子供達への支援につながります。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       参加要件（3カード）
+       ============================================================ -->
+  <section class="section-black-light">
+    <div class="container">
+      <div class="section-title fade-in-section">
+        <span class="en">Requirements</span>
+        <span class="ja">参加要件・ルール</span>
+        <div class="line"></div>
+      </div>
+      <!-- ▼ 各要件カードは差し替え可能 -->
+      <div class="requirements-grid">
+        <div class="req-card fade-in-section">
+          <p class="req-title">🥊 対象選手</p>
+          <ul>
+            <li>格闘技歴・実績を問わず参加可能</li>
+            <li>18歳以上（未成年は保護者の同意必要）</li>
+            <li>健康診断書を提出できる方</li>
+            <li>チャリティ活動の趣旨に賛同できる方</li>
+          </ul>
+        </div>
+        <div class="req-card fade-in-section">
+          <p class="req-title">⚔️ 対応ルール</p>
+          <ul>
+            <li>キックボクシング（K-1ルール）</li>
+            <li>ムエタイ</li>
+            <li>MMA（総合格闘技）</li>
+            <li>グラップリング</li>
+            <li>ボクシング</li>
+          </ul>
+        </div>
+        <div class="req-card fade-in-section">
+          <p class="req-title">💰 参加費用</p>
+          <ul>
+            <li>出場料：¥X,XXX〜（ルール・体重クラスによる）</li>
+            <li>ライセンス保険料：実費</li>
+            <li>健康診断費：実費</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       エントリーの流れ（4ステップ）
+       ============================================================ -->
+  <section class="section-black">
+    <div class="container">
+      <div class="section-title fade-in-section">
+        <span class="en">Entry Flow</span>
+        <span class="ja">エントリーの流れ</span>
+        <div class="line"></div>
+      </div>
+      <!-- ▼ 各ステップは差し替え可能 -->
+      <div class="flow-grid">
+        <div class="flow-item fade-in-section">
+          <div class="flow-step">01</div>
+          <div class="flow-content">
+            <h3>エントリーフォーム送信</h3>
+            <p>下記フォームよりお申し込みください。</p>
+          </div>
+        </div>
+        <div class="flow-item fade-in-section">
+          <div class="flow-step">02</div>
+          <div class="flow-content">
+            <h3>マッチングメール</h3>
+            <p>事務局よりマッチング状況をご連絡します（2週間以内）。</p>
+          </div>
+        </div>
+        <div class="flow-item fade-in-section">
+          <div class="flow-step">03</div>
+          <div class="flow-content">
+            <h3>対戦合意・書類提出</h3>
+            <p>対戦合意後、健康診断書・誓約書等をご提出ください。</p>
+          </div>
+        </div>
+        <div class="flow-item fade-in-section">
+          <div class="flow-step">04</div>
+          <div class="flow-content">
+            <h3>計量・当日参加</h3>
+            <p>当日計量後、試合に出場いただきます。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- エントリーCTA -->
+      <div class="recruitment-cta fade-in-section">
+        <h3>エントリーはこちら</h3>
+        <!-- ▼ エントリー詳細テキストは差し替え -->
+        <p>
+          お問い合わせフォームより「選手エントリー希望」とご記入のうえ、<br>
+          お名前・体重・格闘技歴・希望ルールをご記載ください。
+        </p>
+        <a href="contact.html" class="btn btn-primary">選手エントリーフォームへ</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section id="cta-banner">
+    <div class="top-line" aria-hidden="true"></div>
+    <div class="bottom-line" aria-hidden="true"></div>
+    <div class="container">
+      <h2 class="cta-title">大会情報もチェックしてください</h2>
+      <div class="cta-buttons">
+        <a href="events-next.html"     class="btn btn-primary">次回大会を見る</a>
+        <a href="events-matchups.html" class="btn btn-outline-red">対戦カードを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 協賛バナー -->
+  <section id="sponsors-banner" aria-label="協賛企業・協賛者">
+    <div class="sponsors-label container">Our Sponsors &amp; Supporters</div>
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-track" id="sponsorTrack1">
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">株式会社〇〇商事</span><span class="badge-name-en">SAMPLE CORP</span></div>
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">△△建設株式会社</span><span class="badge-name-en">SAMPLE CONSTRUCTION</span></div>
+        <div class="sponsor-badge badge-silver"><span class="badge-tier">SILVER</span><span class="badge-name">□□フィットネス</span><span class="badge-name-en">SAMPLE FITNESS</span></div>
+        <div class="sponsor-badge badge-bronze"><span class="badge-tier">BRONZE</span><span class="badge-name">△△スポーツ用品</span><span class="badge-name-en">SAMPLE SPORTS</span></div>
+        <div class="sponsor-badge badge-general"><span class="badge-tier">SPONSOR</span><span class="badge-name">○○不動産</span></div>
+      </div>
+      <div class="marquee-track track-2" id="sponsorTrack2" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="footer-main"><div class="container"><div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a><p>格闘技を通じて、子供達への支援の輪を広げるチャリティーファイトイベント。</p></div>
+      <div class="footer-col"><h4>INASE</h4><ul><li><a href="about.html">INASEとは</a></li><li><a href="contact.html">お問い合わせ</a></li></ul></div>
+      <div class="footer-col"><h4>活動・大会</h4><ul><li><a href="charity.html">チャリティ活動</a></li><li><a href="events.html">大会情報</a></li><li><a href="recruitment.html">選手募集</a></li></ul></div>
+      <div class="footer-col"><h4>協賛</h4><ul><li><a href="sponsorship.html">協賛募集</a></li><li><a href="sponsors.html">協賛一覧</a></li></ul></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom">
+      <p class="copy">© <span id="currentYear"></span> INASE Charity Fight. All Rights Reserved.</p>
+      <div class="links"><a href="contact.html">お問い合わせ</a><a href="#">プライバシーポリシー</a></div>
+    </div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

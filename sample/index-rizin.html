@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INASE Charity Fight — 格闘技を通じて支援の輪を広げるチャリティーファイトイベント">
+  <title>INASE Charity Fight | 案1: RIZIN型 格闘技迫力重視</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #DC0A0A;
+      --red2:   #FF1A1A;
+      --black:  #070707;
+      --dark:   #111111;
+      --dark2:  #1A1A1A;
+      --white:  #F5F5F5;
+      --gray:   #888;
+      --gray2:  #CCCCCC;
+      --font:   'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== HEADER ===== */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px;
+      background: rgba(7,7,7,0.96);
+      border-bottom: 1px solid rgba(220,10,10,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 100%;
+    }
+
+    .logo { display: flex; align-items: center; gap: 10px; }
+    /* ▼ ロゴ画像差し替え: .logo-icon を削除し <img src="../images/logo.svg" alt="INASE"> に変更 */
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 20px; color: #fff;
+      clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+    }
+    .logo-text strong { display: block; font-size: 17px; font-weight: 900; letter-spacing: 0.12em; line-height: 1; }
+    .logo-text span { font-size: 9px; letter-spacing: 0.25em; color: var(--red); font-weight: 600; text-transform: uppercase; }
+
+    .nav-desktop { display: flex; align-items: center; gap: 2px; }
+    .nav-desktop a {
+      padding: 8px 11px; font-size: 12px;
+      color: var(--gray2); letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-desktop a:hover { color: var(--red); }
+
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 6px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span { display: block; width: 100%; height: 2px; background: var(--white); transition: 0.25s; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: #0e0e0e; border-bottom: 1px solid rgba(220,10,10,0.2);
+      z-index: 99; padding: 10px 0;
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a {
+      display: block; padding: 13px 24px; font-size: 14px;
+      color: var(--gray2); border-left: 3px solid transparent;
+      transition: 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--red); border-left-color: var(--red); }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; padding-top: 64px;
+    }
+
+    /* ▼ 背景写真差し替え: .hero-bg の background を削除し background-image: url('../images/hero.jpg') を追加 */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, #0d0000 0%, #1a0000 30%, #050505 70%, #0d0000 100%);
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 70% 50%, rgba(220,10,10,0.18) 0%, transparent 65%);
+    }
+
+    /* 斜めスラッシュ装飾 */
+    .hero-slash {
+      position: absolute;
+      top: 0; right: 20%; bottom: 0; width: 3px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(220,10,10,0.7) 30%, rgba(220,10,10,0.7) 70%, transparent 100%);
+      transform: rotate(6deg); transform-origin: top;
+    }
+    .hero-slash::before {
+      content: '';
+      position: absolute; top: 0; left: -18px; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(220,10,10,0.25), transparent);
+    }
+
+    /* グリッド */
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image:
+        linear-gradient(rgba(220,10,10,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220,10,10,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 40px 24px 80px;
+      max-width: 800px; width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.4em;
+      text-transform: uppercase; color: var(--red);
+      margin-bottom: 32px;
+      opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block; height: 1px; width: 28px;
+      background: var(--red);
+    }
+
+    .hero-h1 {
+      font-size: clamp(36px, 7vw, 80px);
+      font-weight: 900; line-height: 1.1;
+      margin-bottom: 8px;
+      opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+    .hero-h1 .line1 { display: block; color: var(--white); }
+    .hero-h1 .line2 {
+      display: block; color: var(--red);
+      text-shadow: 0 0 40px rgba(220,10,10,0.8), 0 0 80px rgba(220,10,10,0.3);
+    }
+    .hero-h1 .line3 { display: block; color: var(--white); }
+
+    .hero-sub {
+      margin: 28px 0 44px;
+      opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+    .hero-sub .title {
+      font-size: clamp(16px, 2.2vw, 22px); font-weight: 700;
+      color: var(--gray2); letter-spacing: 0.08em;
+    }
+    .hero-sub .tagline {
+      font-size: clamp(14px, 1.8vw, 18px); font-weight: 600;
+      color: var(--red); letter-spacing: 0.1em; margin-top: 4px;
+    }
+
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .btn {
+      display: inline-block; padding: 14px 32px;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      border: 2px solid transparent; cursor: pointer; transition: 0.2s;
+      text-align: center;
+    }
+    .btn-red {
+      background: var(--red); color: #fff; border-color: var(--red);
+      clip-path: polygon(0 0, 97% 0, 100% 100%, 3% 100%);
+    }
+    .btn-red:hover {
+      background: var(--red2);
+      box-shadow: 0 0 28px rgba(220,10,10,0.7);
+    }
+    .btn-outline {
+      background: transparent; color: var(--white); border-color: rgba(255,255,255,0.35);
+    }
+    .btn-outline:hover { border-color: var(--red); color: var(--red); }
+    .btn-outline-red {
+      background: transparent; color: var(--red); border-color: rgba(220,10,10,0.5);
+    }
+    .btn-outline-red:hover { background: var(--red); color: #fff; }
+
+    .hero-scroll {
+      position: absolute; bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: var(--gray); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    }
+    .hero-scroll span.bar {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--red), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    /* ===== PHILOSOPHY PILLARS ===== */
+    #philosophy {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid rgba(220,10,10,0.15);
+    }
+
+    .section-head {
+      text-align: center; margin-bottom: 60px;
+    }
+    .section-head .en {
+      display: block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.35em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 10px;
+    }
+    .section-head .ja {
+      display: block; font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900; color: var(--white); margin-bottom: 14px;
+    }
+    .section-head .rule {
+      display: block; width: 48px; height: 2px; background: var(--red); margin: 0 auto;
+    }
+
+    .pillars {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+    }
+    .pillar {
+      background: var(--dark2); padding: 40px 28px;
+      border-top: 3px solid transparent;
+      transition: 0.25s;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s;
+    }
+    .pillar.visible { opacity: 1; transform: none; }
+    .pillar:hover { border-top-color: var(--red); }
+    .pillar .num {
+      font-size: 48px; font-weight: 900; color: rgba(220,10,10,0.12);
+      line-height: 1; margin-bottom: 16px; display: block;
+    }
+    .pillar h3 {
+      font-size: 18px; font-weight: 900; color: var(--white);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .pillar h3 em { color: var(--red); font-style: normal; }
+    .pillar p { font-size: 13px; color: var(--gray); line-height: 1.85; }
+
+    /* ===== CHARITY STATEMENT ===== */
+    #why {
+      padding: 100px 0;
+      background: var(--black);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #why::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220,10,10,0.07) 0%, transparent 70%);
+    }
+    .why-inner { position: relative; z-index: 1; }
+    .why-statement {
+      font-size: clamp(20px, 3.5vw, 40px);
+      font-weight: 900; color: var(--white); line-height: 1.5;
+      max-width: 800px; margin: 0 auto 32px;
+    }
+    .why-statement em { color: var(--red); font-style: normal; display: block; }
+    .why-body {
+      font-size: 15px; color: var(--gray); line-height: 1.9;
+      max-width: 600px; margin: 0 auto 40px;
+    }
+
+    /* ===== EVENT ===== */
+    #event {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid rgba(220,10,10,0.15);
+    }
+
+    .event-card {
+      background: var(--black);
+      border: 1px solid rgba(220,10,10,0.3);
+      box-shadow: 0 0 60px rgba(220,10,10,0.06);
+      display: grid; grid-template-columns: 1fr auto; gap: 40px;
+      align-items: center; padding: 48px;
+    }
+    .event-live {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 14px;
+    }
+    .event-live .dot {
+      width: 8px; height: 8px; background: var(--red); border-radius: 50%;
+      animation: pulse 1.8s ease infinite;
+    }
+    .event-title {
+      font-size: clamp(22px, 3vw, 34px); font-weight: 900; color: var(--white);
+      margin-bottom: 20px; line-height: 1.2;
+    }
+    .event-meta li {
+      font-size: 14px; color: var(--gray2); padding: 5px 0;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .event-meta li span.ico { color: var(--red); width: 16px; }
+    .event-btns { display: flex; flex-direction: column; gap: 12px; min-width: 200px; }
+
+    /* ===== RECRUITMENT ===== */
+    #recruit {
+      padding: 100px 0;
+      background: var(--black); position: relative;
+    }
+    #recruit::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(220,10,10,0.04) 0%, transparent 60%);
+    }
+    .recruit-inner { position: relative; z-index: 1; text-align: center; }
+    .recruit-big {
+      font-size: clamp(28px, 6vw, 72px); font-weight: 900;
+      line-height: 1.1; margin-bottom: 20px; color: var(--white);
+    }
+    .recruit-big em { color: var(--red); font-style: normal; display: block; }
+    .recruit-sub {
+      font-size: 15px; color: var(--gray); max-width: 520px;
+      margin: 0 auto 36px; line-height: 1.85;
+    }
+
+    /* ===== SPONSOR STRIP ===== */
+    #sponsor-strip {
+      background: var(--red); padding: 64px 0;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #sponsor-strip::before {
+      content: 'SPONSOR';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 180px; font-weight: 900; opacity: 0.05;
+      letter-spacing: 0.1em; white-space: nowrap;
+      color: #000; pointer-events: none;
+    }
+    .strip-title {
+      font-size: clamp(18px, 3vw, 28px); font-weight: 900;
+      color: #fff; margin-bottom: 12px; position: relative;
+    }
+    .strip-sub {
+      font-size: 14px; color: rgba(255,255,255,0.75);
+      margin-bottom: 32px; position: relative; line-height: 1.8;
+    }
+    .strip-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+    .btn-white {
+      background: #fff; color: var(--red); border: 2px solid #fff;
+      padding: 14px 36px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      transition: 0.2s;
+    }
+    .btn-white:hover { background: transparent; color: #fff; }
+    .btn-outline-white {
+      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6);
+      padding: 14px 36px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      transition: 0.2s;
+    }
+    .btn-outline-white:hover { border-color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #030303; border-top: 1px solid rgba(220,10,10,0.2);
+      padding: 48px 0 24px;
+    }
+    .footer-inner {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      justify-content: space-between; align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--gray); margin-top: 12px; max-width: 220px; line-height: 1.8; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-links h4 { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { font-size: 13px; color: var(--gray); transition: 0.2s; }
+    .footer-links a:hover { color: var(--red); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 11px; color: #444; }
+    .footer-bottom a { font-size: 11px; color: #444; transition: 0.2s; }
+    .footer-bottom a:hover { color: var(--red); }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.85)} }
+    @keyframes scrollPulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .fade-in-section {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in-section.visible { opacity: 1; transform: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-desktop { display: none; }
+      .hamburger { display: flex; }
+      .pillars { grid-template-columns: 1fr; }
+      .event-card { grid-template-columns: 1fr; }
+      .event-btns { flex-direction: row; min-width: auto; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { gap: 24px; }
+    }
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { width: 100%; max-width: 320px; }
+      .strip-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <!-- ▼ ロゴ差し替え: logo-icon を削除し <img src="../images/logo.svg" alt="INASE"> に変更 -->
+        <div class="logo-icon">I</div>
+        <div class="logo-text">
+          <strong>INASE</strong>
+          <span>Charity Fight</span>
+        </div>
+      </a>
+      <nav class="nav-desktop" aria-label="メインナビゲーション">
+        <a href="../static/about.html">INASEとは</a>
+        <a href="../static/charity.html">チャリティ活動</a>
+        <a href="../static/events.html">大会情報</a>
+        <a href="../static/recruitment.html">選手募集</a>
+        <a href="../static/sponsorship.html">協賛募集</a>
+        <a href="../static/contact.html">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav-mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+    <a href="../static/about.html"       onclick="closeMenu()">INASEとは</a>
+    <a href="../static/charity.html"     onclick="closeMenu()">チャリティ活動</a>
+    <a href="../static/events.html"      onclick="closeMenu()">大会情報</a>
+    <a href="../static/recruitment.html" onclick="closeMenu()">選手募集</a>
+    <a href="../static/sponsorship.html" onclick="closeMenu()">協賛募集</a>
+    <a href="../static/contact.html"     onclick="closeMenu()">お問い合わせ</a>
+  </nav>
+
+
+  <!-- ====== HERO ====== -->
+  <section id="hero" aria-label="ヒーローセクション">
+    <!-- ▼ 背景写真差し替え: .hero-bg に style="background-image:url('../images/hero.jpg'); background-size:cover; background-position:center;" を追加し、内部の ::after グラデーションで暗くする -->
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-slash" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Charity Fight Event</div>
+
+      <h1 class="hero-h1">
+        <span class="line1">格闘技を通じて、</span>
+        <span class="line2">支援の輪を広げる</span>
+        <span class="line3">チャリティーファイト</span>
+      </h1>
+
+      <div class="hero-sub">
+        <p class="title">INASE Charity Fight</p>
+        <p class="tagline">〜子供達のために。〜</p>
+      </div>
+
+      <div class="hero-btns">
+        <a href="../static/events.html"      class="btn btn-red">大会情報を見る</a>
+        <a href="../static/recruitment.html" class="btn btn-outline">選手募集を見る</a>
+        <a href="../static/sponsorship.html" class="btn btn-outline-red">協賛について</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="bar"></span>
+    </div>
+  </section>
+
+
+  <!-- ====== PHILOSOPHY ====== -->
+  <section id="philosophy" aria-label="理念">
+    <div class="container">
+      <div class="section-head fade-in-section">
+        <span class="en">Our Philosophy</span>
+        <span class="ja">INASEの理念</span>
+        <span class="rule"></span>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar fade-in-section">
+          <span class="num">01</span>
+          <h3>格闘技の<em>熱量</em>で<br>社会を動かす</h3>
+          <p>試合の興奮と感動は、見る者の心を動かす力を持っています。その力を、社会貢献へとつなげることがINASEの使命です。</p>
+        </div>
+        <div class="pillar fade-in-section">
+          <span class="num">02</span>
+          <h3>勝負だから<em>わかる</em><br>人の痛み</h3>
+          <p>格闘技を愛するからこそ、痛みや苦しみを知っています。だからこそ、支援を必要としている子供達に手を差し伸べます。</p>
+        </div>
+        <div class="pillar fade-in-section">
+          <span class="num">03</span>
+          <h3>選手・観客・企業が<em>一つ</em>になる</h3>
+          <p>戦う者も、応援する者も、支える者も。すべての関わりがチャリティの輪となり、子供達の未来へとつながります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== WHY ====== -->
+  <section id="why" aria-label="チャリティの意味">
+    <div class="container why-inner">
+      <p class="why-statement fade-in-section">
+        あなたの一撃が、<em>子供達の笑顔を守る。</em>
+      </p>
+      <p class="why-body fade-in-section">
+        INASE Charity Fightは、格闘技の持つ「熱量」と「感動」を社会的な力に変えるチャリティーイベントです。
+        子ども食堂への支援、スポーツ用具の寄贈、学習支援活動——大会を通じて集まった力を、必要としている子供達へ届けます。
+        格闘技を通じて、支援の輪を広げる。それがINASEのすべてです。
+      </p>
+      <a href="../static/charity.html" class="btn btn-outline-red fade-in-section">チャリティ活動を見る</a>
+    </div>
+  </section>
+
+
+  <!-- ====== EVENT ====== -->
+  <section id="event" aria-label="大会情報">
+    <div class="container">
+      <div class="section-head fade-in-section">
+        <span class="en">Upcoming Event</span>
+        <span class="ja">次回大会</span>
+        <span class="rule"></span>
+      </div>
+
+      <div class="event-card fade-in-section">
+        <div class="event-info">
+          <div class="event-live">
+            <span class="dot" aria-hidden="true"></span>
+            Upcoming Event
+          </div>
+          <h2 class="event-title">INASE Charity Fight Vol.XX</h2>
+          <ul class="event-meta">
+            <li><span class="ico">📅</span> 2025年〇月〇日（〇） 開場 XX:XX / 開始 XX:XX</li>
+            <li><span class="ico">📍</span> 〇〇アリーナ（〇〇県〇〇市）</li>
+            <li><span class="ico">🎟</span> チケット販売中 / 選手エントリー受付中</li>
+          </ul>
+          <p style="font-size:13px; color:var(--gray); line-height:1.8;">
+            格闘技を通じて子供達への支援を行うチャリティーファイトイベント。<br>
+            出場選手・協賛企業も随時募集しています。
+          </p>
+        </div>
+        <div class="event-btns">
+          <a href="../static/events-next.html"  class="btn btn-red">大会詳細を見る</a>
+          <a href="../static/contact.html"       class="btn btn-outline-red">チケット・お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== RECRUIT ====== -->
+  <section id="recruit" aria-label="選手募集">
+    <div class="container">
+      <div class="recruit-inner">
+        <p class="recruit-big fade-in-section">
+          あなたの戦いが、
+          <em>子供達の未来を変える。</em>
+        </p>
+        <p class="recruit-sub fade-in-section">
+          格闘技歴・実績を問わず、チャリティの趣旨に賛同いただける方であればどなたでもご参加いただけます。
+          あなたの力を、リングの上で子供達のために発揮してください。
+        </p>
+        <div class="fade-in-section" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="../static/recruitment.html" class="btn btn-red">選手募集を見る</a>
+          <a href="../static/contact.html"     class="btn btn-outline">エントリーする</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== SPONSOR STRIP ====== -->
+  <section id="sponsor-strip" aria-label="協賛募集">
+    <div class="container" style="position:relative; z-index:1;">
+      <p class="strip-title">格闘技の力で、子供達の未来を共に支えませんか？</p>
+      <p class="strip-sub">
+        企業・個人を問わず、INASEの活動へのご協賛をお待ちしています。<br>
+        大会バナー掲出・SNS紹介・ロゴ掲載など、様々なプランをご用意しています。
+      </p>
+      <div class="strip-btns">
+        <a href="../static/sponsorship.html" class="btn-white">協賛プランを見る</a>
+        <a href="../static/contact.html"     class="btn-outline-white">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer aria-label="フッター">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">I</div>
+            <div class="logo-text">
+              <strong>INASE</strong>
+              <span>Charity Fight</span>
+            </div>
+          </a>
+          <p>格闘技を通じて、子供達への支援の輪を広げるチャリティーファイトイベント。</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>INASE</h4>
+            <ul>
+              <li><a href="../static/about.html">INASEとは</a></li>
+              <li><a href="../static/charity.html">チャリティ活動</a></li>
+              <li><a href="../static/contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>大会</h4>
+            <ul>
+              <li><a href="../static/events.html">大会情報</a></li>
+              <li><a href="../static/events-next.html">次回大会</a></li>
+              <li><a href="../static/recruitment.html">選手募集</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>協賛</h4>
+            <ul>
+              <li><a href="../static/sponsorship.html">協賛募集</a></li>
+              <li><a href="../static/sponsors.html">協賛企業一覧</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> INASE Charity Fight. All Rights Reserved.</p>
+        <a href="../static/contact.html">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../static/script.js"></script>
+</body>
+</html>

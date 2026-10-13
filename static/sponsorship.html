@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INASE Charity Fight 協賛企業・支援者を募集しています。4つのプランからお選びください。">
+  <title>協賛募集 | INASE Charity Fight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a>
+      <nav class="nav-desktop">
+        <a href="index.html">TOPへ</a><a href="about.html">INASEとは</a>
+        <div class="nav-item"><a href="charity.html">チャリティ活動</a><div class="nav-dropdown"><a href="charity-achievements.html">支援実績</a><a href="charity-reports.html">寄付報告</a><a href="charity-activities.html">活動レポート</a></div></div>
+        <div class="nav-item"><a href="events.html">大会情報</a><div class="nav-dropdown"><a href="events-next.html">次回大会</a><a href="events-matchups.html">対戦カード</a><a href="events-past.html">過去大会</a></div></div>
+        <a href="recruitment.html">選手募集</a><a href="sponsorship.html">協賛募集</a><a href="sponsors.html">協賛一覧</a><a href="contact.html">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="mobileNav">
+    <a href="index.html" onclick="closeMenu()">TOPへ</a><a href="about.html" onclick="closeMenu()">INASEとは</a>
+    <a href="charity.html" onclick="closeMenu()">チャリティ活動</a>
+    <a href="charity-achievements.html" class="nav-mobile-sub" onclick="closeMenu()">└ 支援実績</a>
+    <a href="charity-reports.html" class="nav-mobile-sub" onclick="closeMenu()">└ 寄付報告</a>
+    <a href="charity-activities.html" class="nav-mobile-sub" onclick="closeMenu()">└ 活動レポート</a>
+    <a href="events.html" onclick="closeMenu()">大会情報</a>
+    <a href="events-next.html" class="nav-mobile-sub" onclick="closeMenu()">└ 次回大会</a>
+    <a href="events-matchups.html" class="nav-mobile-sub" onclick="closeMenu()">└ 対戦カード</a>
+    <a href="events-past.html" class="nav-mobile-sub" onclick="closeMenu()">└ 過去大会</a>
+    <a href="recruitment.html" onclick="closeMenu()">選手募集</a><a href="sponsorship.html" onclick="closeMenu()">協賛募集</a>
+    <a href="sponsors.html" onclick="closeMenu()">協賛一覧</a><a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  </nav>
+
+
+  <!-- ページヒーロー -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <span class="page-hero-en">Sponsorship</span>
+      <h1>協賛募集</h1>
+      <!-- ▼ キャッチコピーは差し替え可能 -->
+      <p class="page-hero-desc">貴社の協賛が、子供達の未来への支援につながります。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       協賛する理由（why-grid 4カード）
+       ============================================================ -->
+  <section class="section-black-light">
+    <div class="container">
+      <div class="section-title fade-in-section">
+        <span class="en">Why Sponsor</span>
+        <span class="ja">協賛するメリット</span>
+        <div class="line"></div>
+      </div>
+      <!-- ▼ カード内容は差し替え可能 -->
+      <div class="why-grid">
+        <div class="why-card fade-in-section">
+          <div class="why-icon">🎯</div>
+          <h3>ブランド露出</h3>
+          <p>会場バナー・大会パンフレット・公式サイト・SNS に貴社ロゴを掲載します。</p>
+        </div>
+        <div class="why-card fade-in-section">
+          <div class="why-icon">❤️</div>
+          <h3>社会貢献 PR</h3>
+          <p>チャリティ活動への参加を通じて、貴社の CSR 活動として広く発信できます。</p>
+        </div>
+        <div class="why-card fade-in-section">
+          <div class="why-icon">🤝</div>
+          <h3>ネットワーク形成</h3>
+          <p>大会関係者・他の協賛企業・格闘技コミュニティとのつながりが生まれます。</p>
+        </div>
+        <div class="why-card fade-in-section">
+          <div class="why-icon">📢</div>
+          <h3>メディア掲載</h3>
+          <p>大会レポート・SNS 投稿・プレスリリース等で貴社名を継続的に紹介します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       協賛プラン（4段階）
+       ============================================================ -->
+  <section class="section-black">
+    <div class="container">
+      <div class="section-title fade-in-section">
+        <span class="en">Sponsorship Plans</span>
+        <span class="ja">協賛プラン</span>
+        <div class="line"></div>
+      </div>
+
+      <!-- ▼ 各プランの金額・特典は差し替え可能 -->
+      <div class="plan-grid">
+
+        <!-- GOLD -->
+        <div class="plan-card plan-gold fade-in-section">
+          <div class="plan-tier">GOLD</div>
+          <div class="plan-price">¥XXX,XXX<span class="plan-price-unit"> /大会</span></div>
+          <ul class="plan-benefits">
+            <li>会場メインバナー掲出（最大サイズ）</li>
+            <li>公式サイト TOPページにロゴ掲載</li>
+            <li>大会パンフレット 表面ロゴ掲載</li>
+            <li>SNS 協賛紹介投稿（複数回）</li>
+            <li>贈呈式でのご紹介（MC アナウンス）</li>
+            <li>招待チケット XX 枚</li>
+            <li>活動報告レポート贈呈</li>
+          </ul>
+          <a href="contact.html?plan=gold" class="btn btn-primary" style="width:100%;text-align:center;">GOLD に問い合わせ</a>
+        </div>
+
+        <!-- SILVER -->
+        <div class="plan-card plan-silver fade-in-section">
+          <div class="plan-tier">SILVER</div>
+          <div class="plan-price">¥XX,XXX<span class="plan-price-unit"> /大会</span></div>
+          <ul class="plan-benefits">
+            <li>会場バナー掲出（標準サイズ）</li>
+            <li>公式サイト 協賛一覧ページに掲載</li>
+            <li>大会パンフレット ロゴ掲載</li>
+            <li>SNS 協賛紹介投稿（1回）</li>
+            <li>招待チケット X 枚</li>
+            <li>活動報告レポート贈呈</li>
+          </ul>
+          <a href="contact.html?plan=silver" class="btn btn-outline-red" style="width:100%;text-align:center;">SILVER に問い合わせ</a>
+        </div>
+
+        <!-- BRONZE -->
+        <div class="plan-card plan-bronze fade-in-section">
+          <div class="plan-tier">BRONZE</div>
+          <div class="plan-price">¥X,XXX<span class="plan-price-unit"> /大会</span></div>
+          <ul class="plan-benefits">
+            <li>公式サイト 協賛一覧ページに掲載</li>
+            <li>大会パンフレット 社名掲載</li>
+            <li>SNS 協賛紹介投稿（1回）</li>
+            <li>招待チケット X 枚</li>
+          </ul>
+          <a href="contact.html?plan=bronze" class="btn btn-outline-red" style="width:100%;text-align:center;">BRONZE に問い合わせ</a>
+        </div>
+
+        <!-- 一般協賛 -->
+        <div class="plan-card plan-general fade-in-section">
+          <div class="plan-tier">GENERAL</div>
+          <div class="plan-price">¥X,XXX〜<span class="plan-price-unit"> /任意</span></div>
+          <ul class="plan-benefits">
+            <li>公式サイト 協賛一覧ページに社名掲載</li>
+            <li>大会パンフレット 社名掲載</li>
+            <li>寄付金として全額チャリティに充当</li>
+          </ul>
+          <a href="contact.html?plan=general" class="btn btn-outline-red" style="width:100%;text-align:center;">一般協賛に問い合わせ</a>
+        </div>
+
+      </div><!-- /.plan-grid -->
+
+      <p class="matchup-note" style="margin-top:32px;">
+        ※ プランの詳細・カスタマイズについては、お問い合わせフォームよりご相談ください。<br>
+        ※ 記載の金額・特典は予告なく変更になる場合があります。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section id="cta-banner">
+    <div class="top-line" aria-hidden="true"></div>
+    <div class="bottom-line" aria-hidden="true"></div>
+    <div class="container">
+      <h2 class="cta-title">まずはお気軽にご相談ください</h2>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">協賛のお問い合わせ</a>
+        <a href="sponsors.html" class="btn btn-outline-red">現在の協賛企業を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 協賛バナー -->
+  <section id="sponsors-banner" aria-label="協賛企業・協賛者">
+    <div class="sponsors-label container">Our Sponsors &amp; Supporters</div>
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-track" id="sponsorTrack1">
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">株式会社〇〇商事</span><span class="badge-name-en">SAMPLE CORP</span></div>
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">△△建設株式会社</span><span class="badge-name-en">SAMPLE CONSTRUCTION</span></div>
+        <div class="sponsor-badge badge-silver"><span class="badge-tier">SILVER</span><span class="badge-name">□□フィットネス</span><span class="badge-name-en">SAMPLE FITNESS</span></div>
+        <div class="sponsor-badge badge-bronze"><span class="badge-tier">BRONZE</span><span class="badge-name">△△スポーツ用品</span><span class="badge-name-en">SAMPLE SPORTS</span></div>
+        <div class="sponsor-badge badge-general"><span class="badge-tier">SPONSOR</span><span class="badge-name">○○不動産</span></div>
+      </div>
+      <div class="marquee-track track-2" id="sponsorTrack2" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="footer-main"><div class="container"><div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a><p>格闘技を通じて、子供達への支援の輪を広げるチャリティーファイトイベント。</p></div>
+      <div class="footer-col"><h4>INASE</h4><ul><li><a href="about.html">INASEとは</a></li><li><a href="contact.html">お問い合わせ</a></li></ul></div>
+      <div class="footer-col"><h4>活動・大会</h4><ul><li><a href="charity.html">チャリティ活動</a></li><li><a href="events.html">大会情報</a></li><li><a href="recruitment.html">選手募集</a></li></ul></div>
+      <div class="footer-col"><h4>協賛</h4><ul><li><a href="sponsorship.html">協賛募集</a></li><li><a href="sponsors.html">協賛一覧</a></li></ul></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom">
+      <p class="copy">© <span id="currentYear"></span> INASE Charity Fight. All Rights Reserved.</p>
+      <div class="links"><a href="contact.html">お問い合わせ</a><a href="#">プライバシーポリシー</a></div>
+    </div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

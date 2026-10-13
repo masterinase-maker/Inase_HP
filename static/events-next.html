@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INASE Charity Fight 次回大会の詳細情報・スケジュール・会場案内。">
+  <title>次回大会 | INASE Charity Fight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a>
+      <nav class="nav-desktop">
+        <a href="index.html">TOPへ</a><a href="about.html">INASEとは</a>
+        <div class="nav-item"><a href="charity.html">チャリティ活動</a><div class="nav-dropdown"><a href="charity-achievements.html">支援実績</a><a href="charity-reports.html">寄付報告</a><a href="charity-activities.html">活動レポート</a></div></div>
+        <div class="nav-item"><a href="events.html">大会情報</a><div class="nav-dropdown"><a href="events-next.html">次回大会</a><a href="events-matchups.html">対戦カード</a><a href="events-past.html">過去大会</a></div></div>
+        <a href="recruitment.html">選手募集</a><a href="sponsorship.html">協賛募集</a><a href="sponsors.html">協賛一覧</a><a href="contact.html">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="mobileNav">
+    <a href="index.html" onclick="closeMenu()">TOPへ</a><a href="about.html" onclick="closeMenu()">INASEとは</a>
+    <a href="charity.html" onclick="closeMenu()">チャリティ活動</a>
+    <a href="charity-achievements.html" class="nav-mobile-sub" onclick="closeMenu()">└ 支援実績</a>
+    <a href="charity-reports.html" class="nav-mobile-sub" onclick="closeMenu()">└ 寄付報告</a>
+    <a href="charity-activities.html" class="nav-mobile-sub" onclick="closeMenu()">└ 活動レポート</a>
+    <a href="events.html" onclick="closeMenu()">大会情報</a>
+    <a href="events-next.html" class="nav-mobile-sub" onclick="closeMenu()">└ 次回大会</a>
+    <a href="events-matchups.html" class="nav-mobile-sub" onclick="closeMenu()">└ 対戦カード</a>
+    <a href="events-past.html" class="nav-mobile-sub" onclick="closeMenu()">└ 過去大会</a>
+    <a href="recruitment.html" onclick="closeMenu()">選手募集</a><a href="sponsorship.html" onclick="closeMenu()">協賛募集</a>
+    <a href="sponsors.html" onclick="closeMenu()">協賛一覧</a><a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  </nav>
+
+
+  <!-- ページヒーロー -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+        <span style="width:8px;height:8px;background:var(--red);border-radius:50%;display:inline-block;animation:pulse 1.8s ease infinite;"></span>
+        <span class="page-hero-en" style="margin-bottom:0;">Upcoming Event</span>
+      </div>
+      <h1>次回大会</h1>
+      <!-- ▼ 大会名は本番データに差し替え -->
+      <p class="page-hero-sub">INASE Charity Fight Vol.XX</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       大会詳細 & スケジュール（2カラム）
+       ============================================================ -->
+  <section class="section-black">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- 左: 大会詳細テーブル -->
+        <div class="fade-in-section">
+          <div class="section-title" style="text-align:left;margin-bottom:24px;">
+            <span class="en">Event Details</span>
+            <span class="ja">大会詳細</span>
+            <div class="line" style="justify-content:flex-start;"></div>
+          </div>
+          <!-- ▼ 各行のデータを本番データに差し替え -->
+          <table class="event-detail-table">
+            <tr><td>大会名</td><td>INASE Charity Fight Vol.XX</td></tr>
+            <tr><td>開催日</td><td>2025年〇月〇日（〇）</td></tr>
+            <tr><td>開場</td><td>XX:XX</td></tr>
+            <tr><td>開始</td><td>XX:XX</td></tr>
+            <tr><td>会場</td><td>〇〇アリーナ<br>（〇〇県〇〇市〇〇町 X-X）</td></tr>
+            <tr><td>チケット</td><td>S席：¥X,XXX　A席：¥X,XXX　自由席：¥X,XXX</td></tr>
+            <tr><td>主催</td><td>INASE Charity Fight 実行委員会</td></tr>
+          </table>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+            <a href="contact.html"         class="btn btn-primary">チケット・お問い合わせ</a>
+            <a href="events-matchups.html" class="btn btn-outline-red">対戦カードを見る</a>
+          </div>
+        </div>
+
+        <!-- 右: 当日スケジュール -->
+        <div class="fade-in-section">
+          <div class="section-title" style="text-align:left;margin-bottom:24px;">
+            <span class="en">Schedule</span>
+            <span class="ja">当日スケジュール</span>
+            <div class="line" style="justify-content:flex-start;"></div>
+          </div>
+          <!-- ▼ スケジュールデータを本番データに差し替え -->
+          <ul class="schedule-list">
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">開場</span></div></li>
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">開会式・チャリティ紹介</span></div></li>
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">第1試合 開始</span></div></li>
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">各試合（計 XX 試合予定）</span></div></li>
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">メインイベント</span></div></li>
+            <li class="schedule-item"><span class="schedule-time">XX:XX</span><div class="schedule-body"><span class="schedule-dot"></span><span class="schedule-text">閉会式・チャリティ目録贈呈式</span></div></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       会場案内
+       ============================================================ -->
+  <section class="section-black-light">
+    <div class="container">
+      <div class="section-title fade-in-section">
+        <span class="en">Venue</span>
+        <span class="ja">会場案内</span>
+        <div class="line"></div>
+      </div>
+      <div class="venue-box fade-in-section">
+        <span class="venue-icon">📍</span>
+        <!-- ▼ 会場名・住所・アクセスは差し替え -->
+        <div class="venue-name">〇〇アリーナ</div>
+        <div class="venue-address">〇〇県〇〇市〇〇町 X-X-X</div>
+        <p class="venue-note">
+          最寄り駅：〇〇線「〇〇駅」より徒歩 XX 分<br>
+          駐車場あり（有料・台数限定）
+        </p>
+        <!-- ▼ Googleマップ埋め込み用エリア（iframe に差し替え） -->
+        <div class="venue-map">地図（Google マップ埋め込み予定）</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section id="cta-banner">
+    <div class="top-line" aria-hidden="true"></div>
+    <div class="bottom-line" aria-hidden="true"></div>
+    <div class="container">
+      <h2 class="cta-title">選手・協賛も募集中！</h2>
+      <p class="cta-desc">出場選手・協賛企業・ボランティアスタッフを募集しています。</p>
+      <div class="cta-buttons">
+        <a href="recruitment.html" class="btn btn-primary">選手応募フォームへ</a>
+        <a href="sponsorship.html" class="btn btn-outline-red">協賛について</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 協賛バナー -->
+  <section id="sponsors-banner" aria-label="協賛企業・協賛者">
+    <div class="sponsors-label container">Our Sponsors &amp; Supporters</div>
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-track" id="sponsorTrack1">
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">株式会社〇〇商事</span><span class="badge-name-en">SAMPLE CORP</span></div>
+        <div class="sponsor-badge badge-gold"><span class="badge-tier">GOLD</span><span class="badge-name">△△建設株式会社</span><span class="badge-name-en">SAMPLE CONSTRUCTION</span></div>
+        <div class="sponsor-badge badge-silver"><span class="badge-tier">SILVER</span><span class="badge-name">□□フィットネス</span><span class="badge-name-en">SAMPLE FITNESS</span></div>
+        <div class="sponsor-badge badge-silver"><span class="badge-tier">SILVER</span><span class="badge-name">◇◇整骨院</span><span class="badge-name-en">SAMPLE CLINIC</span></div>
+        <div class="sponsor-badge badge-bronze"><span class="badge-tier">BRONZE</span><span class="badge-name">△△スポーツ用品</span><span class="badge-name-en">SAMPLE SPORTS</span></div>
+        <div class="sponsor-badge badge-general"><span class="badge-tier">SPONSOR</span><span class="badge-name">○○不動産</span></div>
+      </div>
+      <div class="marquee-track track-2" id="sponsorTrack2" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="footer-main"><div class="container"><div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">I</div><div class="logo-text"><strong>INASE</strong><span>Charity Fight</span></div></a><p>格闘技を通じて、子供達への支援の輪を広げるチャリティーファイトイベント。</p></div>
+      <div class="footer-col"><h4>INASE</h4><ul><li><a href="about.html">INASEとは</a></li><li><a href="contact.html">お問い合わせ</a></li></ul></div>
+      <div class="footer-col"><h4>活動・大会</h4><ul><li><a href="charity.html">チャリティ活動</a></li><li><a href="events.html">大会情報</a></li><li><a href="recruitment.html">選手募集</a></li></ul></div>
+      <div class="footer-col"><h4>協賛</h4><ul><li><a href="sponsorship.html">協賛募集</a></li><li><a href="sponsors.html">協賛一覧</a></li></ul></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom">
+      <p class="copy">© <span id="currentYear"></span> INASE Charity Fight. All Rights Reserved.</p>
+      <div class="links"><a href="contact.html">お問い合わせ</a><a href="#">プライバシーポリシー</a></div>
+    </div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
